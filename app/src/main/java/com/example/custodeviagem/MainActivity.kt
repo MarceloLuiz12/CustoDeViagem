@@ -12,12 +12,16 @@ import com.example.custodeviagem.databinding.ActivityMainBinding
 class MainActivity() : AppCompatActivity(), View.OnClickListener {
     private lateinit var bindging: ActivityMainBinding
 
+    /**
+     * Função responsável por fazer a criação da Activity
+     */
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bindging = ActivityMainBinding.inflate(layoutInflater)
         setContentView(bindging.root)
 
+        //Adiciona evento ao elemento de interface
         bindging.buttonCalculate.setOnClickListener(this)
     }
 
@@ -41,6 +45,9 @@ class MainActivity() : AppCompatActivity(), View.OnClickListener {
                 bindging.editAutonomy.text.toString().toFloat() != 0f)
     }
 
+    /**
+     * Função responsável por tratar qualquer evento de click nos elementos
+     */
     override fun onClick(view: View) {
         if(view.id == R.id.button_calculate){
             calculate()
